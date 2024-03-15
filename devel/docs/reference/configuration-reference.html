@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration Reference &mdash; CRI Resource Manager 0.6.0-2-g21ed50ef documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <title>Configuration Reference &mdash; CRI Resource Manager 0.0.0-1-gab87e23 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -26,20 +31,24 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> CRI Resource Manager
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CRI Resource Manager
           </a>
               <div class="version">
                 devel
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick-start</a></li>
@@ -49,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../node-agent.html">Node Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../webhook.html">Webhook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-to-NRI.html">Migrating from CRI-RM to NRI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="resmgr-command-line-reference.html">CRI-Resmgr Command-line Reference</a></li>
@@ -95,9 +105,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Reference</a> &raquo;</li>
-      <li>Configuration Reference</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Reference</a></li>
+      <li class="breadcrumb-item active">Configuration Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/docs/reference/configuration-reference.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -108,86 +118,86 @@
            <div itemprop="articleBody">
              
   <section id="configuration-reference">
-<h1>Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permalink to this headline">¶</a></h1>
+<h1>Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permalink to this heading"></a></h1>
 <section id="configuration-file">
-<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this heading"></a></h2>
 <p><em><strong>WORK IN PROGRESS</strong></em></p>
 <section id="policy">
-<h3><code class="docutils literal notranslate"><span class="pre">policy</span></code><a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">policy</span></code><a class="headerlink" href="#policy" title="Permalink to this heading"></a></h3>
 <p><strong>Active</strong> specifies the active policy.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policy</span><span class="p">:</span>
-  <span class="nt">Active</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">static</span>
+<span class="w">  </span><span class="nt">Active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">static</span>
 </pre></div>
 </div>
-<p><strong>AvailableResources</strong> specifies the available hardware resources.
-<strong>ReservedResources</strong> specifies the hardware resources reserved for system and
-kube tasks.
-Currently, only CPU resources are supported. CPUs may be specified as a cpuset
+<p><strong>AvailableResources</strong> specifies the available hardware resources.</p>
+<p><strong>ReservedResources</strong> specifies the hardware resources reserved for system and
+kube tasks.</p>
+<p>Currently, only CPU resources are supported. CPUs may be specified as a cpuset
 or as a numerical value, similar to Kubernetes resource quantities. Not all
-policies use these configuration settins. See the policy-specific documentation
+policies use these configuration settings. See the policy-specific documentation
 for details.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policy</span><span class="p">:</span>
-  <span class="nt">AvailableResources</span><span class="p">:</span>
-    <span class="nt">cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cpuset:0-63</span>
-  <span class="nt">ReservedResources</span><span class="p">:</span>
-    <span class="nt">cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cpuset:0-3</span>
-    <span class="c1"># Alternative ways to specify CPUs:</span>
-    <span class="c1">#cpu: 4</span>
-    <span class="c1">#cpu: 4000m</span>
+<span class="w">  </span><span class="nt">AvailableResources</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpuset:0-63</span>
+<span class="w">  </span><span class="nt">ReservedResources</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpuset:0-3</span>
+<span class="w">    </span><span class="c1"># Alternative ways to specify CPUs:</span>
+<span class="w">    </span><span class="c1">#cpu: 4</span>
+<span class="w">    </span><span class="c1">#cpu: 4000m</span>
 </pre></div>
 </div>
 </section>
 <section id="policy-static">
-<h3><code class="docutils literal notranslate"><span class="pre">policy.static</span></code><a class="headerlink" href="#policy-static" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">policy.static</span></code><a class="headerlink" href="#policy-static" title="Permalink to this heading"></a></h3>
 <p><strong>RelaxedIsolation</strong> controls whether isolated CPUs are preferred for Guarenteed
 Pods.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policy</span><span class="p">:</span>
-  <span class="nt">static</span><span class="p">:</span>
-    <span class="nt">RelaxedIsolation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">static</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">RelaxedIsolation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 </section>
 <section id="policy-static-plus">
-<h3><code class="docutils literal notranslate"><span class="pre">policy.static-plus</span></code><a class="headerlink" href="#policy-static-plus" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">policy.static-plus</span></code><a class="headerlink" href="#policy-static-plus" title="Permalink to this heading"></a></h3>
 </section>
 <section id="policytopology-aware">
-<h3><code class="docutils literal notranslate"><span class="pre">policytopology-aware</span></code><a class="headerlink" href="#policytopology-aware" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">policytopology-aware</span></code><a class="headerlink" href="#policytopology-aware" title="Permalink to this heading"></a></h3>
 </section>
 <section id="policy-static-pools">
-<h3><code class="docutils literal notranslate"><span class="pre">policy.static-pools</span></code><a class="headerlink" href="#policy-static-pools" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">policy.static-pools</span></code><a class="headerlink" href="#policy-static-pools" title="Permalink to this heading"></a></h3>
 </section>
 <section id="policy-eda">
-<h3><code class="docutils literal notranslate"><span class="pre">policy.eda</span></code><a class="headerlink" href="#policy-eda" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">policy.eda</span></code><a class="headerlink" href="#policy-eda" title="Permalink to this heading"></a></h3>
 </section>
 <section id="control">
-<h3><code class="docutils literal notranslate"><span class="pre">control</span></code><a class="headerlink" href="#control" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">control</span></code><a class="headerlink" href="#control" title="Permalink to this heading"></a></h3>
 </section>
 <section id="control-blockio">
-<h3><code class="docutils literal notranslate"><span class="pre">control.blockio</span></code><a class="headerlink" href="#control-blockio" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">control.blockio</span></code><a class="headerlink" href="#control-blockio" title="Permalink to this heading"></a></h3>
 </section>
 <section id="control-rdt">
-<h3><code class="docutils literal notranslate"><span class="pre">control.rdt</span></code><a class="headerlink" href="#control-rdt" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">control.rdt</span></code><a class="headerlink" href="#control-rdt" title="Permalink to this heading"></a></h3>
 </section>
 <section id="blockio">
-<h3><code class="docutils literal notranslate"><span class="pre">blockio</span></code><a class="headerlink" href="#blockio" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">blockio</span></code><a class="headerlink" href="#blockio" title="Permalink to this heading"></a></h3>
 </section>
 <section id="rdt">
-<h3><code class="docutils literal notranslate"><span class="pre">rdt</span></code><a class="headerlink" href="#rdt" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">rdt</span></code><a class="headerlink" href="#rdt" title="Permalink to this heading"></a></h3>
 </section>
 <section id="instrumentation">
-<h3><code class="docutils literal notranslate"><span class="pre">instrumentation</span></code><a class="headerlink" href="#instrumentation" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">instrumentation</span></code><a class="headerlink" href="#instrumentation" title="Permalink to this heading"></a></h3>
 </section>
 <section id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">rdt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">rdt</span></code><a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 </section>
 <section id="id2">
-<h3><code class="docutils literal notranslate"><span class="pre">blockio</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">blockio</span></code><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 </section>
 <section id="log">
-<h3><code class="docutils literal notranslate"><span class="pre">log</span></code><a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">log</span></code><a class="headerlink" href="#log" title="Permalink to this heading"></a></h3>
 </section>
 <section id="dump">
-<h3><code class="docutils literal notranslate"><span class="pre">dump</span></code><a class="headerlink" href="#dump" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">dump</span></code><a class="headerlink" href="#dump" title="Permalink to this heading"></a></h3>
 </section>
 </section>
 </section>

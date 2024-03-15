@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>End-to-End tests &mdash; CRI Resource Manager 0.6.0-2-g21ed50ef documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <title>End-to-End tests &mdash; CRI Resource Manager 0.0.0-1-gab87e23 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Demos" href="../demos/index.html" />
+    <link rel="next" title="Migrating from CRI-RM to NRI" href="../migration-to-NRI.html" />
     <link rel="prev" title="CRI Validation" href="cri-test.html" /> 
 </head>
 
@@ -26,20 +31,24 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> CRI Resource Manager
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CRI Resource Manager
           </a>
               <div class="version">
                 devel
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick-start</a></li>
@@ -71,6 +80,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-to-NRI.html">Migrating from CRI-RM to NRI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
@@ -91,10 +101,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Developer’s Guide</a> &raquo;</li>
-          <li><a href="testing.html">Testing</a> &raquo;</li>
-      <li>End-to-End tests</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Developer’s Guide</a></li>
+          <li class="breadcrumb-item"><a href="testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">End-to-End tests</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/docs/developers-guide/e2e-test.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -105,9 +115,9 @@
            <div itemprop="articleBody">
              
   <section id="end-to-end-tests">
-<h1>End-to-End tests<a class="headerlink" href="#end-to-end-tests" title="Permalink to this headline">¶</a></h1>
+<h1>End-to-End tests<a class="headerlink" href="#end-to-end-tests" title="Permalink to this heading"></a></h1>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
 <p>Install:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span></code></p></li>
@@ -120,7 +130,7 @@ In case of errors in building <code class="docutils literal notranslate"><span c
 </ul>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>Run policy tests:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">VAR</span><span class="o">=</span><span class="n">VALUE</span><span class="o">...</span><span class="p">]</span> <span class="o">./</span><span class="n">run_tests</span><span class="o">.</span><span class="n">sh</span> <span class="n">policies</span>
 </pre></div>
@@ -137,7 +147,7 @@ In case of errors in building <code class="docutils literal notranslate"><span c
 tests. Therefore the same <code class="docutils literal notranslate"><span class="pre">VAR=VALUE</span></code> definitions apply both scripts.</p>
 </section>
 <section id="test-phases">
-<h2>Test phases<a class="headerlink" href="#test-phases" title="Permalink to this headline">¶</a></h2>
+<h2>Test phases<a class="headerlink" href="#test-phases" title="Permalink to this heading"></a></h2>
 <p>In the <em>setup phase</em> <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> creates a virtual machine unless it
 already exists. When it is running, tests create a single-node cluster
 and launches <code class="docutils literal notranslate"><span class="pre">cri-resmgr</span></code> on it, unless they are already running.</p>
@@ -150,7 +160,7 @@ virtual machine and software running on it.</p>
 and finally stops or deletes the virtual machine, if that is wanted.</p>
 </section>
 <section id="test-modes">
-<h2>Test modes<a class="headerlink" href="#test-modes" title="Permalink to this headline">¶</a></h2>
+<h2>Test modes<a class="headerlink" href="#test-modes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">test</span></code> mode runs fast and reports <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">verdict:</span> <span class="pre">PASS</span></code> or
 <code class="docutils literal notranslate"><span class="pre">FAIL</span></code>. The exit status is zero if and only if a test passed.</p></li>
@@ -164,7 +174,7 @@ of executing a test script it gives an interactive prompt.</p></li>
 modes.</p>
 </section>
 <section id="running-from-scratch-and-quick-rerun-in-existing-virtual-machine">
-<h2>Running from scratch and quick rerun in existing virtual machine<a class="headerlink" href="#running-from-scratch-and-quick-rerun-in-existing-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<h2>Running from scratch and quick rerun in existing virtual machine<a class="headerlink" href="#running-from-scratch-and-quick-rerun-in-existing-virtual-machine" title="Permalink to this heading"></a></h2>
 <p>The test will use <code class="docutils literal notranslate"><span class="pre">govm</span></code>-managed virtual machine named in the <code class="docutils literal notranslate"><span class="pre">vm</span></code>
 environment variable. The default is <code class="docutils literal notranslate"><span class="pre">crirm-test-e2e</span></code>. If a virtual
 machine with that name exists, the test will be run on it. Otherwise
@@ -178,7 +188,7 @@ and the test script will only delete running pods before launching new
 ones.</p>
 </section>
 <section id="testing-locally-built-cri-resmgr-and-cri-resmgr-from-github">
-<h2>Testing locally built cri-resmgr and cri-resmgr from github<a class="headerlink" href="#testing-locally-built-cri-resmgr-and-cri-resmgr-from-github" title="Permalink to this headline">¶</a></h2>
+<h2>Testing locally built cri-resmgr and cri-resmgr from github<a class="headerlink" href="#testing-locally-built-cri-resmgr-and-cri-resmgr-from-github" title="Permalink to this heading"></a></h2>
 <p>If you make changes to <code class="docutils literal notranslate"><span class="pre">cri-resmgr</span></code> sources and rebuild it, you can
 force the test script to reinstall newly built <code class="docutils literal notranslate"><span class="pre">cri-resmgr</span></code> to
 existing virtual machine before rerunning the test:</p>
@@ -195,7 +205,7 @@ local git sources will not be affected:</p>
 </div>
 </section>
 <section id="custom-tests">
-<h2>Custom tests<a class="headerlink" href="#custom-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Custom tests<a class="headerlink" href="#custom-tests" title="Permalink to this heading"></a></h2>
 <p>You can run a custom test script in a virtual machine that runs
 single-node Kubernetes* cluster. Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat &gt; myscript.sh &lt;&lt; EOF
@@ -213,7 +223,7 @@ $ ./run.sh test myscript.sh
 </div>
 </section>
 <section id="custom-topologies">
-<h2>Custom topologies<a class="headerlink" href="#custom-topologies" title="Permalink to this headline">¶</a></h2>
+<h2>Custom topologies<a class="headerlink" href="#custom-topologies" title="Permalink to this heading"></a></h2>
 <p>If you change NUMA node topology of an existing virtual machine, you
 must delete the virtual machine first. Otherwise the <code class="docutils literal notranslate"><span class="pre">topology</span></code> variable
 is ignored and the test will run in the existing NUMA
@@ -252,7 +262,7 @@ two threads. And with a NUMA node with 16G of non-volatile memory
 </div>
 </section>
 <section id="test-output">
-<h2>Test output<a class="headerlink" href="#test-output" title="Permalink to this headline">¶</a></h2>
+<h2>Test output<a class="headerlink" href="#test-output" title="Permalink to this heading"></a></h2>
 <p>All test output is saved under the directory in the environment
 variable <code class="docutils literal notranslate"><span class="pre">outdir</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">./output</span></code>.</p>
 <p>Executed commands with their output, exit status and timestamps are
@@ -264,7 +274,7 @@ most recent Qemu launced by <code class="docutils literal notranslate"><span cla
 </div>
 </section>
 <section id="manual-testing-and-debugging">
-<h2>Manual testing and debugging<a class="headerlink" href="#manual-testing-and-debugging" title="Permalink to this headline">¶</a></h2>
+<h2>Manual testing and debugging<a class="headerlink" href="#manual-testing-and-debugging" title="Permalink to this heading"></a></h2>
 <p>Interactive mode helps developing and debugging scripts:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./run.sh interactive
 ...
@@ -297,7 +307,7 @@ either or both of them. Example:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cri-test.html" class="btn btn-neutral float-left" title="CRI Validation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../demos/index.html" class="btn btn-neutral float-right" title="Demos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../migration-to-NRI.html" class="btn btn-neutral float-right" title="Migrating from CRI-RM to NRI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

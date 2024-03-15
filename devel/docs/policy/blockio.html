@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Block IO &mdash; CRI Resource Manager 0.6.0-2-g21ed50ef documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <title>Block IO &mdash; CRI Resource Manager 0.0.0-1-gab87e23 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -26,20 +31,24 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> CRI Resource Manager
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CRI Resource Manager
           </a>
               <div class="version">
                 devel
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick-start</a></li>
@@ -48,6 +57,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Policies</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="topology-aware.html">Topology-Aware Policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="static-pools.html">Static-Pools (STP) Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="balloons.html">Balloons Policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="podpools.html">Podpools Policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="container-affinity.html">Container Affinity and Anti-Affinity</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Block IO</a><ul>
@@ -58,11 +68,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rdt.html">RDT (Intel® Resource Director Technology)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu-allocator.html">CPU Allocator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic-pools.html">Dynamic-Pools Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../node-agent.html">Node Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../webhook.html">Webhook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-to-NRI.html">Migrating from CRI-RM to NRI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
@@ -83,9 +95,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Policies</a> &raquo;</li>
-      <li>Block IO</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Policies</a></li>
+      <li class="breadcrumb-item active">Block IO</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/docs/policy/blockio.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,9 +108,9 @@
            <div itemprop="articleBody">
              
   <section id="block-io">
-<h1>Block IO<a class="headerlink" href="#block-io" title="Permalink to this headline">¶</a></h1>
+<h1>Block IO<a class="headerlink" href="#block-io" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>Block IO controller provides means to control</p>
 <ul class="simple">
 <li><p>block device IO scheduling priority (weight)</p></li>
@@ -109,12 +121,12 @@
 <a class="reference external" href="https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/blkio-controller.html">cgroups block io contoller</a>.</p>
 </section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference external" href="https://github.com/intel/cri-resource-manager/blob/21ed50ef93b8153aedc298a07a806f19e3e94825/sample-configs/blockio.cfg">sample blockio configuration</a>.</p>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>See <span class="xref myst">sample blockio configuration</span>.</p>
 </section>
 <section id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference internal" href="../demos/blockio.html"><span class="doc">Block IO demo</span></a></p>
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference internal" href="../demos/blockio.html"><span class="doc std std-doc">Block IO demo</span></a></p>
 </section>
 </section>
 
